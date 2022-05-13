@@ -7,10 +7,14 @@ function Book(title, author, pages, read) {
     this.author = author;
     this.pages = pages;
     this.read = read;
-    this.info = function() {
-        let readString = (this.read === true) ? 'has read' : 'not read yet';
-        return `${this.title} by ${this.author}, ${pages} pages, ${readString}`;
-    }
+    // Hide info method from functions that write to the table
+    Object.defineProperty(this, 'info', {
+        value: function() {
+            let readString = (this.read === true) ? 'has read' : 'not read yet';
+            return `${this.title} by ${this.author}, ${pages} pages, ${readString}`;
+        },
+        enumerable: false
+    });
 }
 
 function convertToTitleCase(string) {
@@ -75,3 +79,5 @@ let table = document.createElement('table');
 table.appendChild(createTableHeader(myLibrary[0]));
 table.appendChild(populateTableBody(myLibrary));
 body.appendChild(table);
+
+console.log(myLibrary[0].info());
