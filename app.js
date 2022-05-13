@@ -1,7 +1,7 @@
 // Store book objects in array
 let myLibrary = [];
 
-
+// Object constructor
 function Book(title, author, pages, read) {
     this.title = title;
     this.author = author;
@@ -26,4 +26,5 @@ addBookToLibrary(theHobbit);
 addBookToLibrary(harryPotter);
 addBookToLibrary(nineteenEightyFour);
 
+// loop through library and display book info
 myLibrary.forEach(book => console.log(book.info()));
