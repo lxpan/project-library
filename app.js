@@ -14,8 +14,6 @@ function Book(title, author, pages, read) {
 }
 
 function convertToTitleCase(string) {
-    // const stringArray = string.toLowerCase().split('');
-    // return string.replace(stringArray[0], stringArray[0].toUpperCase());
     return string.replace(string[0], string[0].toUpperCase());
 }
 
@@ -29,7 +27,7 @@ function createTableHeader() {
     
     Object.keys(theHobbit).forEach(key => {
         let headerCell = document.createElement('th');
-        headerCell.innerText = key.toUpperCase();
+        headerCell.innerText = convertToTitleCase(key);
         tableRow.appendChild(headerCell);
     });
 
@@ -49,11 +47,11 @@ addBookToLibrary(nineteenEightyFour);
 // loop through library and display book info
 // myLibrary.forEach(book => console.log(book.info()));
 
-// let body = document.querySelector('body');
-// let table = document.createElement('table');
+let body = document.querySelector('body');
+let table = document.createElement('table');
 
-// table.appendChild(createTableHeader());
-// body.appendChild(table);
+table.appendChild(createTableHeader());
+body.appendChild(table);
 
-console.log(convertToTitleCase('title'));
+
 
