@@ -45,6 +45,25 @@ function populateLibrary() {
     addBookToLibrary(nineteenEightyFour);
 }
 
+function populateTableBody(library) {
+    let tableBody = document.createElement('tbody');
+
+    library.forEach(book => {
+        let tableRow = document.createElement('tr');
+        let values = Object.values(book);
+
+        let tdArray = values.map(value => {
+            let tableData = document.createElement('td');
+            tableData.innerText = value;
+            return tableData;
+        });
+
+        tdArray.forEach(td => tableRow.appendChild(td));
+        tableBody.appendChild(tableRow);
+    });
+    return tableBody;
+}
+
 // loop through library and display book info
 // myLibrary.forEach(book => console.log(book.info()));
 
@@ -54,7 +73,5 @@ let body = document.querySelector('body');
 let table = document.createElement('table');
 
 table.appendChild(createTableHeader(myLibrary[0]));
+table.appendChild(populateTableBody(myLibrary));
 body.appendChild(table);
-
-
-
