@@ -6,7 +6,7 @@ function Book(title, author, pages, read) {
     this.title = title;
     this.author = author;
     this.pages = pages;
-    this.read = read;
+    this.read = (read) ? 'Yes' : 'No';
     // Hide info method from functions that write to the table
     Object.defineProperty(this, 'info', {
         value: function() {
