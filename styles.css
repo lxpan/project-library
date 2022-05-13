@@ -35,3 +35,11 @@ tr:nth-child(odd) td {
 caption {
     padding: 10px;
 }
+
+/* Styling non-table elements */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
