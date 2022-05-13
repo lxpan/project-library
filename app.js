@@ -1,3 +1,7 @@
+// Store book objects in array
+let myLibrary = [];
+
+
 function Book(title, author, pages, read) {
     this.title = title;
     this.author = author;
@@ -9,5 +13,16 @@ function Book(title, author, pages, read) {
     }
 }
 
-theHobbit = new Book('The Hobbit', 'JRR Tolkien', '500', false);
-console.log(theHobbit.info());
+function addBookToLibrary(bookObject) {
+    myLibrary.push(bookObject);
+}
+
+theHobbit = new Book('The Hobbit', 'JRR Tolkien', 500, false);
+harryPotter = new Book('Harry Potter', 'JK Rowling', 499, false);
+nineteenEightyFour = new Book('1984', 'George Orwell', '384', true);
+
+
+addBookToLibrary(theHobbit);
+addBookToLibrary(harryPotter);
+addBookToLibrary(nineteenEightyFour);
+
