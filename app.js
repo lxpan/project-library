@@ -7,7 +7,7 @@ function Book(title, author, pages, read) {
     this.author = author;
     this.pages = pages;
     this.read = (read) ? 'Yes' : 'No';
-    // Hide info method from functions that write to the table
+    // Hide info method from functions that write to the table using enumeration
     Object.defineProperty(this, 'info', {
         value: function() {
             let readString = (this.read === true) ? 'has read' : 'not read yet';
