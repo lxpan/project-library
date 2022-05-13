@@ -26,3 +26,4 @@ addBookToLibrary(theHobbit);
 addBookToLibrary(harryPotter);
 addBookToLibrary(nineteenEightyFour);
 
+myLibrary.forEach(book => console.log(book.info()));
