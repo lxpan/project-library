@@ -74,7 +74,7 @@ function populateTableBody(library) {
 populateLibrary();
 
 let body = document.querySelector('body');
-let table = document.createElement('table');
+let table = document.querySelector('table');
 
 table.appendChild(createTableHeader(myLibrary[0]));
 table.appendChild(populateTableBody(myLibrary));
