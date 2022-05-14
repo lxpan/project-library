@@ -95,7 +95,7 @@ function populateTableBody(library) {
 }
 
 function showNewBookForm() {
-    let newBookForm = document.querySelector('.new-book-form');
+    const newBookForm = document.querySelector('.new-book-form');
     newBookForm.style.display = 'flex';
 }
 
