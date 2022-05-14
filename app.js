@@ -123,12 +123,12 @@ function onSubmit(evt) {
 
 populateLibrary();
 
-let table = document.querySelector('table');
+const table = document.querySelector('table');
 
 table.appendChild(createTableHeader(myLibrary[0]));
 table.appendChild(populateTableBody(myLibrary));
 
-let newBookButton = document.querySelector('.new-book-button');
+const newBookButton = document.querySelector('.new-book-button');
 newBookButton.addEventListener('click', showNewBookForm);
 
 const form = document.querySelector('form');
