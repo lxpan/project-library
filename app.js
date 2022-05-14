@@ -25,6 +25,16 @@ function addBookToLibrary(bookObject) {
     myLibrary.push(bookObject);
 }
 
+function populateLibrary() {
+    theHobbit = new Book('The Hobbit', 'JRR Tolkien', 500, false);
+    harryPotter = new Book('Harry Potter', 'JK Rowling', 499, false);
+    nineteenEightyFour = new Book('1984', 'George Orwell', '384', true);
+
+    addBookToLibrary(theHobbit);
+    addBookToLibrary(harryPotter);
+    addBookToLibrary(nineteenEightyFour);
+}
+
 function createTableHeader(referenceObject) {
     let tableHead = document.createElement('thead');
     let tableRow = document.createElement('tr');
@@ -37,16 +47,6 @@ function createTableHeader(referenceObject) {
 
     tableHead.appendChild(tableRow);
     return tableHead;
-}
-
-function populateLibrary() {
-    theHobbit = new Book('The Hobbit', 'JRR Tolkien', 500, false);
-    harryPotter = new Book('Harry Potter', 'JK Rowling', 499, false);
-    nineteenEightyFour = new Book('1984', 'George Orwell', '384', true);
-
-    addBookToLibrary(theHobbit);
-    addBookToLibrary(harryPotter);
-    addBookToLibrary(nineteenEightyFour);
 }
 
 function populateTableBody(library) {
