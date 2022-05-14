@@ -37,11 +37,11 @@ function populateLibrary() {
 }
 
 function createTableHeader(referenceObject) {
-    let tableHead = document.createElement('thead');
-    let tableRow = document.createElement('tr');
+    const tableHead = document.createElement('thead');
+    const tableRow = document.createElement('tr');
     
     Object.keys(referenceObject).forEach(key => {
-        let headerCell = document.createElement('th');
+        const headerCell = document.createElement('th');
         headerCell.innerText = convertToTitleCase(key);
         tableRow.appendChild(headerCell);
     });
