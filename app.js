@@ -58,6 +58,7 @@ function populateTableBody(library) {
         let tableRow = document.createElement('tr');
         let values = Object.values(book);
 
+        // Add book ID to each row's data attribute
         tableRow.dataset.bookId = bookID++;
 
         let tdArray = values.map(value => {
