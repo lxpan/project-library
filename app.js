@@ -38,9 +38,9 @@ function addBookToLibrary(bookObject) {
 }
 
 function populateLibrary() {
-    theHobbit = new Book('The Hobbit', 'JRR Tolkien', 500, false);
-    harryPotter = new Book('Harry Potter', 'JK Rowling', 499, false);
-    nineteenEightyFour = new Book('1984', 'George Orwell', '384', true);
+    theHobbit = new Book('The Hobbit', 'J. R. R. Tolkien', 310, false);
+    harryPotter = new Book("Harry Potter and the Philosopher's Stone", 'J. K. Rowling', 223, false);
+    nineteenEightyFour = new Book('Nineteen Eighty-Four', 'George Orwell', '328', true);
 
     addBookToLibrary(theHobbit);
     addBookToLibrary(harryPotter);
