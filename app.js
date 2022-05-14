@@ -61,13 +61,14 @@ function populateTableBody(library) {
         // Add book ID to each row's data attribute
         tableRow.dataset.bookId = bookID++;
 
-        let tdArray = values.map(value => {
+        let tdArray = values.filter(value => value != null).map(value => {
             let tableData = document.createElement('td');
             tableData.innerText = value;
             return tableData;
         });
 
         tdArray.forEach(td => tableRow.appendChild(td));
+
         tableBody.appendChild(tableRow);
     });
     return tableBody;
