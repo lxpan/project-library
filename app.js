@@ -76,10 +76,14 @@ function showNewBookForm() {
 function onSubmit(evt) {
     evt.preventDefault();
     const formData = new FormData(evt.target);
+    // retrieve form values as an object
     const formProps = Object.fromEntries(formData);
-    console.log(formProps);
+    // instantiate new book object and add to library array
     const newBook = new Book(formProps.title, formProps.author, formProps.pages, formProps.read);
+    // repopulate table from book objects
     addBookToLibrary(newBook);
+
+
     table.appendChild(populateTableBody(myLibrary));
 
 }
