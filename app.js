@@ -16,6 +16,16 @@ function Book(title, author, pages, read) {
         },
         enumerable: false
     });
+    Object.defineProperty(this, 'toggleReadStatus', {
+        value: function() {
+            if(this.read == 'Yes') {
+                this.read = 'No';
+            } else {
+                this.read = 'Yes';
+            }
+        },
+        enumerable: false
+    });
 }
 
 function convertToTitleCase(string) {
