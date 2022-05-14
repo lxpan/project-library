@@ -1,5 +1,5 @@
 // Store book objects in array
-let myLibrary = [];
+const myLibrary = [];
 
 // Object constructor
 function Book(title, author, pages, read) {
@@ -11,7 +11,7 @@ function Book(title, author, pages, read) {
     // Hide info method from functions that write to the table from enumerated data
     Object.defineProperty(this, 'info', {
         value: function() {
-            let readString = (this.read === true) ? 'has read' : 'not read yet';
+            const readString = (this.read === true) ? 'has read' : 'not read yet';
             return `${this.title} by ${this.author}, ${pages} pages, ${readString}`;
         },
         enumerable: false
@@ -51,18 +51,18 @@ function createTableHeader(referenceObject) {
 }
 
 function populateTableBody(library) {
-    let tableBody = document.createElement('tbody');
+    const tableBody = document.createElement('tbody');
     let bookID = 0;
 
     library.forEach(book => {
-        let tableRow = document.createElement('tr');
-        let values = Object.values(book);
+        const tableRow = document.createElement('tr');
+        const values = Object.values(book);
 
         // Add book ID to each row's data attribute
         tableRow.dataset.bookId = bookID++;
 
-        let tdArray = values.filter(value => value != null).map(value => {
-            let tableData = document.createElement('td');
+        const tdArray = values.filter(value => value != null).map(value => {
+            const tableData = document.createElement('td');
             tableData.innerText = value;
             return tableData;
         });
@@ -70,8 +70,8 @@ function populateTableBody(library) {
         tdArray.forEach(td => tableRow.appendChild(td));
 
         // Add Delete Book button
-        let deleteButtonTD = document.createElement('td');
-        let deleteButton = document.createElement('button');
+        const deleteButtonTD = document.createElement('td');
+        const deleteButton = document.createElement('button');
         deleteButton.innerText = 'Delete';
         
         deleteButton.addEventListener('click', evt => {
