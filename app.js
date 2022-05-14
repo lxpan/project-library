@@ -80,12 +80,12 @@ function onSubmit(evt) {
     const formProps = Object.fromEntries(formData);
     // instantiate new book object and add to library array
     const newBook = new Book(formProps.title, formProps.author, formProps.pages, formProps.read);
-    // repopulate table from book objects
     addBookToLibrary(newBook);
-
-
+    // delete old table body
+    const oldTableBody = document.querySelector('tbody');
+    oldTableBody.remove();
+    // repopulate table with new table body of book objects
     table.appendChild(populateTableBody(myLibrary));
-
 }
 
 // loop through library and display book info
