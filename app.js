@@ -138,7 +138,9 @@ populateLibrary();
 
 const table = document.querySelector('table');
 
+// create table header from our 'reference' object (first book)
 table.appendChild(createTableHeader(myLibrary[0]));
+// fill in the body rows
 table.appendChild(populateTableBody(myLibrary));
 
 const newBookButton = document.querySelector('.new-book-button');
