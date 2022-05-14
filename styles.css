@@ -51,3 +51,12 @@ body {
     font-size: 1rem;
     gap: 4px;
 }
+
+td button {
+    background-color: bisque;
+    padding: 4px;
+}
+
+td button:hover {
+    background-color: antiquewhite;
+}
