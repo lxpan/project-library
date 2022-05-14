@@ -79,7 +79,7 @@ function onSubmit(evt) {
     // retrieve form values as an object
     const formProps = Object.fromEntries(formData);
     // instantiate new book object and add to library array
-    const newBook = new Book(formProps.title, formProps.author, formProps.pages, formProps.read);
+    const newBook = new Book(formProps.title, formProps.author, formProps.pages, (formProps.read == 'Yes') ? true : false);
     addBookToLibrary(newBook);
     // delete old table body
     const oldTableBody = document.querySelector('tbody');
