@@ -7,6 +7,7 @@ function Book(title, author, pages, read) {
     this.author = author;
     this.pages = pages;
     this.read = (read) ? 'Yes' : 'No';
+    this.bookID = null;
     // Hide info method from functions that write to the table from enumerated data
     Object.defineProperty(this, 'info', {
         value: function() {
@@ -51,10 +52,13 @@ function createTableHeader(referenceObject) {
 
 function populateTableBody(library) {
     let tableBody = document.createElement('tbody');
+    let bookID = 0;
 
     library.forEach(book => {
         let tableRow = document.createElement('tr');
         let values = Object.values(book);
+
+        tableRow.dataset.bookId = bookID++;
 
         let tdArray = values.map(value => {
             let tableData = document.createElement('td');
