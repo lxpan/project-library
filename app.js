@@ -98,8 +98,6 @@ let table = document.querySelector('table');
 table.appendChild(createTableHeader(myLibrary[0]));
 table.appendChild(populateTableBody(myLibrary));
 
-console.log(myLibrary[0].info());
-
 let newBookButton = document.querySelector('.new-book-button');
 newBookButton.addEventListener('click', showNewBookForm);
 
