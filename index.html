@@ -22,8 +22,18 @@
             <input type="text" name="author" id="author">
             <label for="Pages">Pages:</label>
             <input type="text" name="pages" id="pages">
-            <label for="Read">Read:</label>
-            <input type="text" name="read" id="read">
+            
+            <!-- <label for="Read">Read:</label> -->
+            Read:
+            <div class="radio-row">
+                <input type="radio" name="read" id="readChoiceYes" value="Yes">
+                <label for="readChoiceYes">Yes</label>
+            </div>
+            <div class="radio-row">
+                <input type="radio" name="read" id="readChoiceNo" value="No">
+                <label for="readChoiceNo">No</label>
+            </div>
+            
             <button class="add-book">Add Book</button>
         </fieldset>
 
