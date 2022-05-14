@@ -73,6 +73,7 @@ function populateTableBody(library) {
         let deleteButtonTD = document.createElement('td');
         let deleteButton = document.createElement('button');
         deleteButton.innerText = 'Delete';
+
         deleteButtonTD.append(deleteButton);
         tableRow.appendChild(deleteButtonTD);
 
@@ -86,6 +87,11 @@ function showNewBookForm() {
     newBookForm.style.display = 'flex';
 }
 
+function deleteTable() {
+    const oldTableBody = document.querySelector('tbody');
+    oldTableBody.remove();
+}
+
 function onSubmit(evt) {
     evt.preventDefault();
     const formData = new FormData(evt.target);
@@ -95,8 +101,7 @@ function onSubmit(evt) {
     const newBook = new Book(formProps.title, formProps.author, formProps.pages, (formProps.read == 'Yes') ? true : false);
     addBookToLibrary(newBook);
     // delete old table body
-    const oldTableBody = document.querySelector('tbody');
-    oldTableBody.remove();
+    deleteTable();
     // repopulate table with new table body of book objects
     table.appendChild(populateTableBody(myLibrary));
 }
