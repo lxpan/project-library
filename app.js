@@ -69,6 +69,13 @@ function populateTableBody(library) {
 
         tdArray.forEach(td => tableRow.appendChild(td));
 
+        // Add Delete Book button
+        let deleteButtonTD = document.createElement('td');
+        let deleteButton = document.createElement('button');
+        deleteButton.innerText = 'Delete';
+        deleteButtonTD.append(deleteButton);
+        tableRow.appendChild(deleteButtonTD);
+
         tableBody.appendChild(tableRow);
     });
     return tableBody;
