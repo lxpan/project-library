@@ -71,7 +71,17 @@ function populateTableBody(library) {
 function showNewBookForm() {
     let newBookForm = document.querySelector('.new-book-form');
     newBookForm.style.display = 'flex';
-    
+}
+
+function onSubmit(evt) {
+    evt.preventDefault();
+    const formData = new FormData(evt.target);
+    const formProps = Object.fromEntries(formData);
+    console.log(formProps);
+    const newBook = new Book(formProps.title, formProps.author, formProps.pages, formProps.read);
+    addBookToLibrary(newBook);
+    table.appendChild(populateTableBody(myLibrary));
+
 }
 
 // loop through library and display book info
@@ -89,3 +99,8 @@ console.log(myLibrary[0].info());
 let newBookButton = document.querySelector('.new-book-button');
 newBookButton.addEventListener('click', showNewBookForm);
 
+const form = document.querySelector('form');
+form.addEventListener('submit', onSubmit);
+
+// let addNewBookButton = document.querySelector('.add-book');
+// addNewBookButton.addEventListener('submit', addNewBook);
