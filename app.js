@@ -82,9 +82,33 @@ function populateTableBody(library) {
 
         // Add Delete Book button
         tableRow.appendChild(createDeleteButton());
+        // Add ToggleReadS button
+        tableRow.appendChild(createToggleReadButton());
+        
         tableBody.appendChild(tableRow);
     });
     return tableBody;
+}
+
+function createToggleReadButton() {
+    const toggleReadButtonTD = document.createElement('td');
+    const toggleReadButton = document.createElement('button');
+    
+    toggleReadButton.innerText = 'Toggle Read Status';
+    toggleReadButton.addEventListener('click', toggleReadListenerFunction);
+    
+    toggleReadButtonTD.append(toggleReadButton);
+    return toggleReadButtonTD;
+}
+
+function toggleReadListenerFunction(evt) {
+    thisButton = evt.target;
+    // get data attribute from parent's parent (<tr data-...>);
+    const idx = thisButton.parentElement.parentElement.dataset.bookId;
+    myLibrary[idx].toggleReadStatus();
+    // refresh table
+    deleteTable();
+    table.appendChild(populateTableBody(myLibrary));
 }
 
 function createDeleteButton() {
