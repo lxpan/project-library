@@ -49,4 +49,5 @@ body {
     display: none;
     flex-direction: column;
     font-size: 1rem;
+    gap: 4px;
 }
