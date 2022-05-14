@@ -68,6 +68,12 @@ function populateTableBody(library) {
     return tableBody;
 }
 
+function showNewBookForm() {
+    let newBookForm = document.querySelector('.new-book-form');
+    newBookForm.style.display = 'flex';
+    
+}
+
 // loop through library and display book info
 // myLibrary.forEach(book => console.log(book.info()));
 
@@ -79,3 +85,7 @@ table.appendChild(createTableHeader(myLibrary[0]));
 table.appendChild(populateTableBody(myLibrary));
 
 console.log(myLibrary[0].info());
+
+let newBookButton = document.querySelector('.new-book-button');
+newBookButton.addEventListener('click', showNewBookForm);
+
