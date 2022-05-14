@@ -8,6 +8,7 @@ function Book(title, author, pages, read) {
     this.pages = pages;
     this.read = (read) ? 'Yes' : 'No';
     this.bookID = null;
+    this.toggleRead = null;
     // Hide info method from functions that write to the table from enumerated data
     Object.defineProperty(this, 'info', {
         value: function() {
@@ -80,28 +81,33 @@ function populateTableBody(library) {
         tdArray.forEach(td => tableRow.appendChild(td));
 
         // Add Delete Book button
-        const deleteButtonTD = document.createElement('td');
-        const deleteButton = document.createElement('button');
-        deleteButton.innerText = 'Delete';
-        
-        deleteButton.addEventListener('click', evt => {
-            thisButton = evt.target;
-            // get data attribute from parent's parent (<tr data-...>);
-            const idx = thisButton.parentElement.parentElement.dataset.bookId;
-            // delete book object at index 'idx'
-            myLibrary.splice(idx, 1);
-            // repopulate table rows
-            console.log(myLibrary);
-            deleteTable();
-            table.appendChild(populateTableBody(myLibrary));
-        });
-        
-        deleteButtonTD.append(deleteButton);
-        tableRow.appendChild(deleteButtonTD);
-
+        tableRow.appendChild(createDeleteButton());
         tableBody.appendChild(tableRow);
     });
     return tableBody;
+}
+
+function createDeleteButton() {
+    const deleteButtonTD = document.createElement('td');
+    const deleteButton = document.createElement('button');
+    deleteButton.innerText = 'Delete';
+    
+    deleteButton.addEventListener('click', deleteBook);
+    
+    deleteButtonTD.append(deleteButton);
+    return deleteButtonTD;
+}
+
+function deleteBook(evt) {
+    thisButton = evt.target;
+    // get data attribute from parent's parent (<tr data-...>);
+    const idx = thisButton.parentElement.parentElement.dataset.bookId;
+    // delete book object at index 'idx'
+    myLibrary.splice(idx, 1);
+    // repopulate table rows
+    console.log(myLibrary);
+    deleteTable();
+    table.appendChild(populateTableBody(myLibrary));
 }
 
 function showNewBookForm() {
