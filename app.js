@@ -118,9 +118,6 @@ function onSubmit(evt) {
     table.appendChild(populateTableBody(myLibrary));
 }
 
-// loop through library and display book info
-// myLibrary.forEach(book => console.log(book.info()));
-
 populateLibrary();
 
 const table = document.querySelector('table');
@@ -133,6 +130,3 @@ newBookButton.addEventListener('click', showNewBookForm);
 
 const form = document.querySelector('form');
 form.addEventListener('submit', onSubmit);
-
-// let addNewBookButton = document.querySelector('.add-book');
-// addNewBookButton.addEventListener('submit', addNewBook);
