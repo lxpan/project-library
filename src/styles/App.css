@@ -1,6 +1,11 @@
-/* From The Odin Project's minimal-table.css */
-html {
+/* Styling non-table elements */
+.app {
     font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 }
 
 table {
@@ -34,15 +39,6 @@ tr:nth-child(odd) td {
 
 caption {
     padding: 10px;
-}
-
-/* Styling non-table elements */
-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
 }
 
 .new-book-form {
